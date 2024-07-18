@@ -200,4 +200,71 @@ namespace Assignment_Interface_Solution_1_
             pushService.SendNotification("user1", "Hello via Push Notification!");
         }
     }
-}
+
+    #region Part 03 - Explaining how Clone creates a shallow copy:
+    
+    /*
+     * 
+    namespace CloneExample
+    {
+        // Define a class with a few properties
+        public class Person
+        {
+            public string Name { get; set; }
+            public Address Address { get; set; }
+
+            // Implement the Clone method to create a shallow copy
+            public Person Clone()
+            {
+                // Create a new instance of Person and copy the values of the current instance
+                return new Person
+                {
+                    Name = this.Name,
+                    Address = this.Address
+                     This creates a shallow copy because only the reference to the Address object is copied, not the object itself.
+                };
+            }
+        }
+
+        // Define another class to be used as a property in the Person class
+        public class Address
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+        }
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a new instance of Person
+        Person person1 = new Person
+        {
+            Name = "John",
+            Address = new Address { Street = "123 Main St", City = "Anytown" }
+        };
+
+        // Clone person1 to create a shallow copy
+        Person person2 = person1.Clone();
+
+        // Display original and cloned person's details
+        Console.WriteLine($"Person1 Name: {person1.Name}, Address: {person1.Address.Street}, {person1.Address.City}");
+        Console.WriteLine($"Person2 Name: {person2.Name}, Address: {person2.Address.Street}, {person2.Address.City}");
+
+        // Modify the address of the cloned person
+        person2.Address.Street = "456 Elm St";
+
+        // Display the details again to see the effect of the shallow copy
+        Console.WriteLine($"After modification:");
+        Console.WriteLine($"Person1 Name: {person1.Name}, Address: {person1.Address.Street}, {person1.Address.City}");
+        Console.WriteLine($"Person2 Name: {person2.Name}, Address: {person2.Address.Street}, {person2.Address.City}");
+
+        *Notice how changing the Address property of person2 also affects person1.
+                 *This is because the Address property was copied by reference, not by value.
+                 *Both person1 and person2 share the same Address object.
+            }
+       } 
+
+    */
+
+    #endregion
