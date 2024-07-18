@@ -170,13 +170,13 @@ namespace Assignment_Interface_Solution_1_
     {
         static void Main(string[] args)
         {
-            #region Part 01 Testing
+            // Part 01 Question 01 Testing
             IShape circle = new Circle(5);
             circle.DisplayShapeInfo();
 
             IShape rectangle = new Rectangle(4, 6);
             rectangle.DisplayShapeInfo();
-            #endregion
+
 
             // Question 02 - Testing
 
